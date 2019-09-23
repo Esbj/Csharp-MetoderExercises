@@ -17,7 +17,8 @@ namespace Hello
             //     kod kod kod
             //     ev return 
             // }
-            Hello("Göte");
+            Console.Write("Skriv ditt namn: ");
+            Hello(Console.ReadLine());
         }
     }
 }
