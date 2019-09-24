@@ -5,7 +5,7 @@ namespace Add_Strings
     class Program
     {
         static string addStrings (string string1, string string2){
-            string addedString = string1 +" "+string2;
+            string addedString = string1 +" & "+string2;
             return addedString;
         }
         static void Main(string[] args)
