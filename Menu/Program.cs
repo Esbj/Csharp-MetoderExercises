@@ -6,10 +6,10 @@ namespace Menu
     {
         static void Menu()
         {
+            Console.WriteLine("Välj vilket program du vill köra");
             Console.WriteLine("1: Addera nummer");
             Console.WriteLine("2: Väder");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("3: Avsluta");
             return;
         }
         static void numberAdder()//val 1
@@ -18,7 +18,7 @@ namespace Menu
             int[] numbers = new int[2];
             numbers[0] = Convert.ToInt32(Console.ReadLine());
             numbers[1] = Convert.ToInt32(Console.ReadLine());
-            int sum = numbers[1] + numbers[2];
+            int sum = numbers[0] + numbers[1];
             Console.WriteLine("Summan av talen är: " + sum);
             return;
         }
@@ -28,9 +28,12 @@ namespace Menu
             string väder = Console.ReadLine();
             väder.ToUpper();
             char input = väder[0];
-            if (input == 'S'){
+            if (input == 'S')
+            {
                 Console.WriteLine("Gå ut med dig ditt slöa as!");
-            }else if (input == 'R'){
+            }
+            else if (input == 'R')
+            {
                 Console.WriteLine("Okej du får stanna inne men rör på dig lite ändå!");
             }
         }
@@ -41,21 +44,22 @@ namespace Menu
             // Du kan ta någon uppgift från tidigare övningar men försök att hitta på egna metoder! 
 
             Console.WriteLine("Välkommen!");
-            Console.WriteLine("Välj vilket program du vill köra");
-            Menu();
-            string input = Console.ReadLine();
-            switch (input)
+            do
             {
-                case "1":
-                    numberAdder();
-                    break;
-                case "2":
-                    weather();
-                    break;
-                case "3":
-                    break;
-
-            }
+                Menu();
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        numberAdder();
+                        break;
+                    case "2":
+                        weather();
+                        break;
+                    case "3":
+                        return;
+                }
+            }while (true);
         }
     }
 }
